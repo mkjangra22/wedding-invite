@@ -43,8 +43,8 @@ export const Hero = () => {
   const handleDownloadMainCalendar = () => {
     downloadIcsFile({
       title: "Wedding of Vinay & Navisha and Sumit & Bhawna",
-      description: "Join us in celebrating the wedding festivities of Vinay & Navisha and Sumit & Bhawna in Panipat, Haryana.",
-      venue: "The Grand Imperial Haveli & Resort, Panipat, Haryana",
+      // description: "Join us in celebrating the wedding festivities of Vinay & Navisha and Sumit & Bhawna in Panipat, Haryana.",
+      // venue: "The Grand Imperial Haveli & Resort, Panipat, Haryana",
       startIso: "2026-11-19T11:00:00+05:30",
       endIso: "2026-11-21T23:30:00+05:30"
     });
@@ -63,7 +63,7 @@ export const Hero = () => {
           transition={{ duration: 0.8 }}
           className="flex flex-col items-center mb-6"
         >
-          <img src="ganesh.jpg" className="w-12 h-12 object-cover object-center filter brightness-[0.98] contrast-[1.03] transition-transform duration-700 hover:scale-105" />
+          <img src="ganesh.jpg" className="w-12 h-12 object-cover object-center filter brightness-[0.98] contrast-[1.03] transition-transform duration-700 hover:scale-105" style={{ borderRadius: "50%" }} />
           <p className="font-sanskrit-shloka text-maroon-900 text-sm md:text-base font-semibold tracking-widest">
             {couple.sanskritGreeting}
           </p>

@@ -222,6 +222,7 @@ export const weddingData = {
     subName: "Secretary Farm House",
     address: "Patti Kalyana, Samalkha, Haryana 132102",
     googleMapsUrl: "https://maps.app.goo.gl/Ugc9QenFnMiS1fmu6",
+    appleMapsUrl: "https://maps.apple/p/aDDyd6Z_PpEN~t",
     // parking: "Valet parking available for all guests at the Grand North Gate with 400+ vehicle capacity.",
     conciergePhone: "+91 98765 43210",
     conciergeEmail: "[EMAIL_ADDRESS]",
