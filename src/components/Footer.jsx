@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, Share2, ArrowUp } from 'lucide-react';
+import { Heart, Share2, ArrowUp, Bold, Italic } from 'lucide-react';
 import { GaneshaIcon, MandalaDivider } from './Motifs';
 import { weddingData } from '../data/weddingData';
 
@@ -11,7 +11,7 @@ export const Footer = () => {
   };
 
   const handleShareWhatsApp = () => {
-    const text = `✨ You are cordially invited to celebrate the wedding celebrations of Vinay & Navisha and Sumit & Bhawna! (20 November 2026, Panipat, Haryana).\n\nScratch the invitation card to reveal our wedding details:\n${window.location.href}`;
+    const text = `✨ You are cordially invited to celebrate the wedding celebrations of Vinay weds Navisha and Sumit weds Bhawna! (20 November 2026, Panipat, Haryana).\n\nScratch the invitation card to reveal our wedding details:\n${window.location.href}`;
     const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank');
   };
@@ -21,7 +21,7 @@ export const Footer = () => {
       <div className="max-w-4xl mx-auto flex flex-col items-center">
         {/* Top Ganesh Blessing */}
         <div className="flex justify-center mb-3">
-          <GaneshaIcon className="w-10 h-10 text-maroon-800 animate-pulse-subtle" />
+          {/* <GaneshaIcon className="w-10 h-10 text-maroon-800 animate-pulse-subtle" /> */}
         </div>
 
         {/* Sacred Sanskrit Shubh Vivah */}
@@ -52,7 +52,7 @@ export const Footer = () => {
         </p>
 
         <p className="font-sans text-xs tracking-widest uppercase text-gold-dark font-semibold mt-4">
-          With love, Vinay &amp; Navisha and Sumit &amp; Bhawna
+          With love, <strong>Vinay weds Navisha</strong> <i>and</i> <strong>Sumit weds Bhawna</strong>
         </p>
 
         {/* Action buttons (WhatsApp Share & Back to Top) */}
@@ -76,7 +76,7 @@ export const Footer = () => {
 
         {/* Bottom copyright / credits */}
         <div className="mt-14 pt-6 border-t border-gold/20 w-full text-[11px] text-ink-500 font-sans flex flex-col sm:flex-row items-center justify-between gap-2">
-          <span>20 November 2026 • Panipat, Haryana</span>
+          <span>20 November 2026</span>
           <span>Designed with love &amp; auspicious blessings</span>
         </div>
       </div>

@@ -10,7 +10,7 @@ export const getGoogleCalendarUrl = ({ title, description, venue, startIso, endI
   const params = new URLSearchParams({
     action: "TEMPLATE",
     text: `Wedding — ${title}`,
-    details: `${description}\n\nCouples: Vinay & Navisha and Sumit & Bhawna`,
+    details: `${description}\n\nCouples: Vinay weds Navisha and Sumit weds Bhawna`,
     location: venue,
     dates: `${startFormatted}/${endFormatted}`,
   });

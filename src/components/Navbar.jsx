@@ -52,7 +52,7 @@ export const Navbar = () => {
             href="#hero"
             onClick={(e) => handleLinkClick(e, '#hero')}
             className="flex md:hidden items-center gap-1.5 group"
-            aria-label="Vinay & Navisha and Sumit & Bhawna"
+            aria-label="Vinay weds Navisha and Sumit weds Bhawna"
           >
             <div className="w-7 h-7 rounded-full border border-gold/70 flex items-center justify-center bg-cream-50 text-maroon-900 font-serif font-bold text-[10px] tracking-wider shadow-sm group-hover:border-gold transition-colors">
               VN
@@ -73,7 +73,7 @@ export const Navbar = () => {
               VN
             </div>
             <span className="font-serif tracking-widest text-xs uppercase font-medium text-maroon-900 whitespace-nowrap">
-              Vinay &amp; Navisha
+              Vinay weds Navisha
             </span>
           </a>
         </div>
@@ -101,7 +101,7 @@ export const Navbar = () => {
             className="hidden md:flex items-center gap-2 group"
           >
             <span className="font-serif tracking-widest text-xs uppercase font-medium text-maroon-900 whitespace-nowrap">
-              Sumit &amp; Bhawna
+              Sumit weds Bhawna
             </span>
             <div className="w-8 h-8 rounded-full border border-gold/70 flex items-center justify-center bg-cream-50 text-maroon-900 font-serif font-bold text-xs tracking-wider shadow-sm group-hover:border-gold group-hover:bg-cream-100 transition-colors shrink-0">
               SB
@@ -131,9 +131,9 @@ export const Navbar = () => {
           >
             <div className="flex flex-col space-y-4">
               <div className="flex items-center justify-between pb-3 border-b border-gold/20 font-serif text-xs tracking-wider text-maroon-900 font-medium">
-                <span>Vinay &amp; Navisha</span>
+                <span>Vinay weds Navisha</span>
                 <span className="text-gold text-xs">✦</span>
-                <span>Sumit &amp; Bhawna</span>
+                <span>Sumit weds Bhawna</span>
               </div>
               {navLinks.map((link) => (
                 <a

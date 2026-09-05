@@ -309,7 +309,7 @@ export const ScratchCardScreen = ({ onEnterInvitation }) => {
               {/* Couple Monogram & Names */}
               <div className="text-center py-0.5">
                 <div className="font-script text-2xl sm:text-3xl text-maroon-900 leading-tight">
-                  Vinay &amp; Navisha
+                  Vinay weds Navisha
                 </div>
                 <div className="flex items-center justify-center gap-2 my-0.5">
                   <div className="w-5 h-[0.5px] bg-gold-dark/60"></div>
@@ -317,7 +317,7 @@ export const ScratchCardScreen = ({ onEnterInvitation }) => {
                   <div className="w-5 h-[0.5px] bg-gold-dark/60"></div>
                 </div>
                 <div className="font-script text-2xl sm:text-3xl text-maroon-900 leading-tight">
-                  Sumit &amp; Bhawna
+                  Sumit weds Bhawna
                 </div>
                 <div className="flex items-center justify-center gap-2 mt-1.5 mb-1">
                   <div className="w-6 h-[0.5px] bg-gold-dark"></div>

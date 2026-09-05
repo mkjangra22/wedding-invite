@@ -52,7 +52,7 @@ export const WeddingMessage = () => {
             With immense joy in our hearts and gratitude to the Almighty, we, along with our parents, cordially invite you to celebrate the wedding festivities of
           </p>
           <p className="font-serif text-xl sm:text-2xl text-maroon-900 font-semibold tracking-wider my-2">
-            Vinay &amp; Navisha <span className="font-serif italic text-gold-dark text-base font-normal mx-2">&amp;</span> Sumit &amp; Bhawna
+            Vinay weds Navisha <span className="font-serif italic text-gold-dark text-base font-normal mx-2">&amp;</span> Sumit weds Bhawna
           </p>
           <p>
             {couple.storyNote}

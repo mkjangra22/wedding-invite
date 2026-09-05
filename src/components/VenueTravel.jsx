@@ -12,7 +12,7 @@ export const VenueTravel = () => {
 
   const weddingEventDetails = {
     title: "Wedding & Dinner Reception",
-    description: "Join Vinay & Navisha and Sumit & Bhawna as they celebrate their wedding ceremonies with family and friends.",
+    description: "Join Vinay weds Navisha and Sumit weds Bhawna as they celebrate their wedding ceremonies with family and friends.",
     venue: `${venue.name}, ${venue.address}`,
     startIso: "2026-11-20T16:00:00+05:30",
     endIso: "2026-11-20T23:59:00+05:30",

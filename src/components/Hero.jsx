@@ -42,7 +42,7 @@ export const Hero = () => {
 
   const handleDownloadMainCalendar = () => {
     downloadIcsFile({
-      title: "Wedding of Vinay & Navisha and Sumit & Bhawna",
+      title: "Wedding of Vinay weds Navisha and Sumit weds Bhawna",
       // description: "Join us in celebrating the wedding festivities of Vinay & Navisha and Sumit & Bhawna in Panipat, Haryana.",
       // venue: "The Grand Imperial Haveli & Resort, Panipat, Haryana",
       startIso: "2026-11-19T11:00:00+05:30",
@@ -93,7 +93,7 @@ export const Hero = () => {
             <div className="relative w-64 sm:w-80 md:w-96 h-80 sm:h-96 md:h-[430px] rounded-t-[130px] rounded-b-xl overflow-hidden bg-cream-200">
               <img
                 src="wedding-reference.jpg"
-                alt="Vinay & Navisha and Sumit & Bhawna"
+                alt="Vinay weds Navisha and Sumit weds Bhawna"
                 className="w-full h-full object-cover object-center filter brightness-[0.98] contrast-[1.03] transition-transform duration-700 hover:scale-105"
                 loading="eager"
               />
@@ -113,7 +113,7 @@ export const Hero = () => {
         >
           <div className="space-y-1">
             <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-light text-maroon-900 tracking-wider">
-              VINAY <span className="font-script text-2xl sm:text-4xl text-gold-metallic mx-1">&amp;</span> NAVISHA
+              VINAY <span className="font-script text-2xl sm:text-4xl text-gold-metallic mx-2 lowercase italic">weds</span> NAVISHA
             </h1>
             <div className="flex items-center justify-center gap-3 my-1">
               <span className="h-[0.5px] w-8 bg-gold-dark/40"></span>
@@ -121,7 +121,7 @@ export const Hero = () => {
               <span className="h-[0.5px] w-8 bg-gold-dark/40"></span>
             </div>
             <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl font-light text-maroon-900 tracking-wider">
-              SUMIT <span className="font-script text-2xl sm:text-4xl text-gold-metallic mx-1">&amp;</span> BHAWNA
+              SUMIT <span className="font-script text-2xl sm:text-4xl text-gold-metallic mx-2 lowercase italic">weds</span> BHAWNA
             </h2>
           </div>
           <p className="font-serif italic text-base sm:text-xl text-ink-600 mt-3 font-light">
