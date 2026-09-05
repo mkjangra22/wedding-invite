@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-cream: #FAF6EE;
+    --color-maroon: #5C141C;
+    --color-gold: #C5A869;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  body {
+    background-color: #FAF6EE;
+    color: #292524;
+    overflow-x: hidden;
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #FAF6EE;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #C5A86980;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #9A7B38;
+  }
+}
+
+/* Subtle Paper Texture Background */
+.paper-texture {
+  background-color: #FAF6EE;
+  background-image: radial-gradient(#C5A86918 0.75px, transparent 0.75px);
+  background-size: 24px 24px;
+}
+
+/* Gold Shimmer Text Effect */
+.gold-shimmer-text {
+  background: linear-gradient(135deg, #9A7B38 0%, #D4AF37 30%, #F5E6B8 50%, #C5A869 70%, #8B6F3E 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+/* Luxury border styles */
+.gold-border-ornate {
+  border: 1px solid rgba(197, 168, 105, 0.4);
+  position: relative;
+}
+
+.gold-border-ornate::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  border: 1px solid rgba(197, 168, 105, 0.2);
+  pointer-events: none;
+}
+
+/* Card hover glow */
+.card-hover-luxury {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-hover-luxury:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 35px -10px rgba(92, 20, 28, 0.12), 0 0 1px 1px rgba(197, 168, 105, 0.3);
+}
+
+/* Sanskrit typography */
+.font-sanskrit-shloka {
+  font-family: 'Rozha One', 'Cinzel', serif;
+  letter-spacing: 0.15em;
+}
+
+/* Custom animation for gentle breathing */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(1deg); }
+}
+
+.animate-float-slow {
+  animation: floatSlow 7s ease-in-out infinite;
+}
