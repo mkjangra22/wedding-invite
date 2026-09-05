@@ -8,7 +8,7 @@ export const supabase = (supabaseUrl && supabaseAnonKey)
   ? createClient(supabaseUrl, supabaseAnonKey)
   : null;
 
-const LOCAL_STORAGE_KEY = 'aarav_ananya_wedding_rsvps';
+const LOCAL_STORAGE_KEY = 'vinay_navisha_wedding_rsvps';
 
 export const saveRSVP = async (rsvpData) => {
   const payload = {

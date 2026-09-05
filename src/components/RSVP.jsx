@@ -102,7 +102,7 @@ export const RSVP = () => {
           Kindly Respond
         </h2>
         <p className="font-serif italic text-ink-600 text-sm sm:text-base mt-2 max-w-md mx-auto">
-          Please let us know if you will be able to join our celebrations by 15 January 2027.
+          Please let us know if you will be able to join our celebrations by 10 November 2026.
         </p>
         <MandalaDivider className="my-6 max-w-xs mx-auto" />
       </div>
@@ -281,7 +281,7 @@ export const RSVP = () => {
                   <MessageSquare className="w-4 h-4 text-gold-dark absolute left-3.5 top-3.5" />
                   <textarea
                     rows={3}
-                    placeholder="Leave a heartfelt note or message for Aarav & Ananya..."
+                    placeholder="Leave a heartfelt note or message for Vinay &amp; Navisha..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     className="w-full pl-10 pr-4 py-3 bg-cream-100/60 border border-gold/40 rounded-xl text-sm text-ink-900 focus:outline-none focus:border-maroon-800 focus:bg-cream-50 transition-colors"

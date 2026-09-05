@@ -1,23 +1,73 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Volume2, VolumeX, Music } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { soundManager } from '../utils/audioSynth';
+import { weddingData } from '../data/weddingData';
 
 export const AudioPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasInteracted, setHasInteracted] = useState(false);
-
-  const toggleAudio = () => {
-    setHasInteracted(true);
-    const active = soundManager.toggle();
-    setIsPlaying(active);
-  };
+  const audioRef = useRef(null);
 
   useEffect(() => {
     return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
       soundManager.stop();
     };
   }, []);
+
+  const toggleAudio = () => {
+    setHasInteracted(true);
+
+    if (isPlaying) {
+      if (audioRef.current && !audioRef.current.paused) {
+        audioRef.current.pause();
+      }
+      soundManager.stop();
+      setIsPlaying(false);
+      return;
+    }
+
+    const candidateFiles = [
+      weddingData.audio?.songUrl,
+      '/wedding-song.mp3',
+      '/song.mp3',
+      '/music.mp3',
+      'wedding-song.mp3',
+      'song.mp3',
+    ].filter(Boolean);
+
+    let startedSong = false;
+
+    const tryPlayAudio = async () => {
+      for (const src of candidateFiles) {
+        try {
+          if (!audioRef.current) {
+            audioRef.current = new Audio();
+          }
+          audioRef.current.src = src;
+          audioRef.current.volume = weddingData.audio?.volume ?? 0.9;
+          audioRef.current.loop = true;
+          await audioRef.current.play();
+          startedSong = true;
+          setIsPlaying(true);
+          return;
+        } catch (err) {
+          // File not found or not playable, check next candidate
+        }
+      }
+
+      // If no custom MP3 file is placed in public/, play the loud raga synthesizer
+      if (!startedSong) {
+        soundManager.play();
+        setIsPlaying(true);
+      }
+    };
+
+    tryPlayAudio();
+  };
 
   return (
     <div className="fixed bottom-6 right-6 z-40 flex items-center gap-3">
@@ -30,14 +80,14 @@ export const AudioPlayer = () => {
           className="hidden sm:flex items-center gap-2 bg-cream-50/95 backdrop-blur-md text-ink-800 text-xs px-3.5 py-1.5 rounded-full border border-gold/40 shadow-gold-soft"
         >
           <Music className="w-3.5 h-3.5 text-maroon-700 animate-bounce" />
-          <span>Play Indian Sitar &amp; Raga Melody</span>
+          <span>Play Music</span>
         </motion.div>
       )}
 
       {/* Music Toggle Button */}
       <button
         onClick={toggleAudio}
-        aria-label={isPlaying ? "Mute Background Music" : "Play Indian Classical Raga"}
+        aria-label={isPlaying ? "Mute Background Music" : "Play Wedding Music"}
         className={`group relative flex items-center justify-center w-12 h-12 rounded-full backdrop-blur-md transition-all duration-300 border ${
           isPlaying
             ? 'bg-maroon-900 text-gold-light border-gold shadow-gold-glow scale-105'

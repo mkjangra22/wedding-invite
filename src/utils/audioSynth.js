@@ -24,15 +24,15 @@ class IndianClassicalSynth {
     if (this.isPlaying) return;
     this.isPlaying = true;
 
-    // Master Gain
+    // Master Gain (boosted volume)
     this.gainNode = this.audioCtx.createGain();
-    this.gainNode.gain.setValueAtTime(0.01, this.audioCtx.currentTime);
-    this.gainNode.gain.exponentialRampToValueAtTime(0.18, this.audioCtx.currentTime + 3);
+    this.gainNode.gain.setValueAtTime(0.02, this.audioCtx.currentTime);
+    this.gainNode.gain.exponentialRampToValueAtTime(0.55, this.audioCtx.currentTime + 2.5);
 
     // Warm Low Pass Filter to sound like acoustic woodwind/tanpura
     const filter = this.audioCtx.createBiquadFilter();
     filter.type = "lowpass";
-    filter.frequency.value = 650;
+    filter.frequency.value = 1400;
     this.gainNode.connect(filter);
     filter.connect(this.audioCtx.destination);
 
@@ -51,7 +51,7 @@ class IndianClassicalSynth {
       // Gentle detuning for shimmer
       osc.detune.setValueAtTime((idx - 1.5) * 4, this.audioCtx.currentTime);
 
-      oscGain.gain.setValueAtTime(0.12 / (idx + 1), this.audioCtx.currentTime);
+      oscGain.gain.setValueAtTime(0.30 / (idx + 1), this.audioCtx.currentTime);
 
       osc.connect(oscGain);
       oscGain.connect(this.gainNode);
@@ -74,16 +74,16 @@ class IndianClassicalSynth {
       melOsc.type = "sine";
       melOsc.frequency.setValueAtTime(noteFreq, this.audioCtx.currentTime);
 
-      melGain.gain.setValueAtTime(0.001, this.audioCtx.currentTime);
-      melGain.gain.linearRampToValueAtTime(0.06, this.audioCtx.currentTime + 1.2);
-      melGain.gain.exponentialRampToValueAtTime(0.0001, this.audioCtx.currentTime + 4.5);
+      melGain.gain.setValueAtTime(0.005, this.audioCtx.currentTime);
+      melGain.gain.linearRampToValueAtTime(0.22, this.audioCtx.currentTime + 0.8);
+      melGain.gain.exponentialRampToValueAtTime(0.0001, this.audioCtx.currentTime + 3.5);
 
       melOsc.connect(melGain);
       melGain.connect(this.gainNode);
 
       melOsc.start();
-      melOsc.stop(this.audioCtx.currentTime + 5);
-    }, 3800);
+      melOsc.stop(this.audioCtx.currentTime + 4);
+    }, 2800);
   }
 
   stop() {

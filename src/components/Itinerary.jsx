@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { 
   Sun, 
@@ -7,15 +7,10 @@ import {
   Wine, 
   Flower2, 
   Clock, 
-  MapPin, 
-  Calendar as CalendarIcon, 
-  Compass, 
-  Check, 
-  ChevronDown 
+  MapPin 
 } from 'lucide-react';
 import { MandalaDivider } from './Motifs';
 import { weddingData } from '../data/weddingData';
-import { getGoogleCalendarUrl, downloadIcsFile } from '../utils/calendar';
 
 const iconMap = {
   Sun: Sun,
@@ -27,11 +22,6 @@ const iconMap = {
 
 export const Itinerary = () => {
   const { itinerary } = weddingData;
-  const [activeDropdown, setActiveDropdown] = useState(null);
-
-  const toggleDropdown = (id) => {
-    setActiveDropdown(activeDropdown === id ? null : id);
-  };
 
   return (
     <section id="itinerary" className="py-24 px-4 max-w-5xl mx-auto relative z-10">
@@ -44,7 +34,7 @@ export const Itinerary = () => {
           Wedding Itinerary
         </h2>
         <p className="font-serif italic text-ink-600 text-sm sm:text-base mt-2 max-w-md mx-auto">
-          Five auspicious celebrations of love, music, traditions, and timeless joy.
+          Auspicious celebrations of love, music, traditions, and timeless joy.
         </p>
         <MandalaDivider className="my-6 max-w-xs mx-auto" />
       </div>
@@ -99,77 +89,11 @@ export const Itinerary = () => {
                       "{event.poeticText}"
                     </p>
 
-                    {/* Venue & Dress Code */}
-                    <div className="mt-5 space-y-2.5 pt-3 border-t border-gold/15 text-xs">
+                    {/* Venue */}
+                    <div className="mt-5 pt-3 border-t border-gold/15 text-xs">
                       <div className="flex items-start gap-2 text-ink-700">
                         <MapPin className="w-4 h-4 text-maroon-700 shrink-0 mt-0.5" />
                         <span className="leading-snug">{event.venue}</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-ink-700">
-                        <span className="w-2 h-2 rounded-full bg-gold-dark shrink-0"></span>
-                        <span>
-                          <strong className="text-maroon-900 font-serif">Dress Code:</strong> {event.dressCode}
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Action Buttons: Add to Calendar & Get Directions */}
-                    <div className="mt-6 pt-3 flex flex-wrap items-center gap-3">
-                      {/* Directions */}
-                      <a
-                        href={`https://maps.google.com/?q=${encodeURIComponent(event.venue)}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-maroon-900 hover:bg-maroon-800 text-cream-50 font-serif text-xs tracking-wider uppercase transition-colors"
-                      >
-                        <Compass className="w-3.5 h-3.5 text-gold-light" />
-                        <span>Get Directions</span>
-                      </a>
-
-                      {/* Calendar Dropdown */}
-                      <div className="relative">
-                        <button
-                          onClick={() => toggleDropdown(event.id)}
-                          className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-cream-100 hover:bg-cream-200 text-ink-800 font-serif text-xs tracking-wider uppercase border border-gold/40 transition-colors"
-                        >
-                          <CalendarIcon className="w-3.5 h-3.5 text-gold-dark" />
-                          <span>Add to Calendar</span>
-                          <ChevronDown className="w-3 h-3 text-ink-500" />
-                        </button>
-
-                        {activeDropdown === event.id && (
-                          <div className="absolute left-0 mt-2 w-48 bg-cream-50 rounded-xl shadow-xl border border-gold/40 py-2 z-30 font-sans text-xs">
-                            <a
-                              href={getGoogleCalendarUrl({
-                                title: event.title,
-                                description: event.poeticText,
-                                venue: event.venue,
-                                startIso: event.startIso,
-                                endIso: event.endIso
-                              })}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="block px-4 py-2 text-ink-800 hover:bg-cream-200 hover:text-maroon-900 transition-colors"
-                            >
-                              Google Calendar
-                            </a>
-                            <button
-                              onClick={() => {
-                                downloadIcsFile({
-                                  title: event.title,
-                                  description: event.poeticText,
-                                  venue: event.venue,
-                                  startIso: event.startIso,
-                                  endIso: event.endIso
-                                });
-                                setActiveDropdown(null);
-                              }}
-                              className="w-full text-left px-4 py-2 text-ink-800 hover:bg-cream-200 hover:text-maroon-900 transition-colors"
-                            >
-                              Apple Calendar / .ics
-                            </button>
-                          </div>
-                        )}
                       </div>
                     </div>
                   </div>

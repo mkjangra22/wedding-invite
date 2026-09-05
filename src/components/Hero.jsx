@@ -42,11 +42,11 @@ export const Hero = () => {
 
   const handleDownloadMainCalendar = () => {
     downloadIcsFile({
-      title: "Wedding of Aarav & Ananya",
-      description: "Join us in celebrating the wedding festivities of Aarav Sharma & Ananya Verma in Panipat, Haryana.",
+      title: "Wedding of Vinay & Navisha and Sumit & Bhawna",
+      description: "Join us in celebrating the wedding festivities of Vinay & Navisha and Sumit & Bhawna in Panipat, Haryana.",
       venue: "The Grand Imperial Haveli & Resort, Panipat, Haryana",
-      startIso: "2027-02-15T11:00:00+05:30",
-      endIso: "2027-02-18T23:30:00+05:30"
+      startIso: "2026-11-19T11:00:00+05:30",
+      endIso: "2026-11-21T23:30:00+05:30"
     });
   };
 
@@ -63,7 +63,7 @@ export const Hero = () => {
           transition={{ duration: 0.8 }}
           className="flex flex-col items-center mb-6"
         >
-          <GaneshaIcon className="w-12 h-12 text-maroon-800 drop-shadow-sm mb-2" />
+          <img src="ganesh.jpg" className="w-12 h-12 object-cover object-center filter brightness-[0.98] contrast-[1.03] transition-transform duration-700 hover:scale-105" />
           <p className="font-sanskrit-shloka text-maroon-900 text-sm md:text-base font-semibold tracking-widest">
             {couple.sanskritGreeting}
           </p>
@@ -92,20 +92,14 @@ export const Hero = () => {
             {/* Photo Container */}
             <div className="relative w-64 sm:w-80 md:w-96 h-80 sm:h-96 md:h-[430px] rounded-t-[130px] rounded-b-xl overflow-hidden bg-cream-200">
               <img
-                src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=1000&auto=format&fit=crop"
-                alt="Aarav and Ananya"
+                src="wedding-reference.jpg"
+                alt="Vinay & Navisha and Sumit & Bhawna"
                 className="w-full h-full object-cover object-center filter brightness-[0.98] contrast-[1.03] transition-transform duration-700 hover:scale-105"
                 loading="eager"
               />
               {/* Soft overlay gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-maroon-950/60 via-transparent to-transparent"></div>
               
-              {/* Hashtag badge inside photo bottom */}
-              <div className="absolute bottom-4 left-0 right-0 text-center">
-                <span className="font-serif text-cream-50 text-xs tracking-widest uppercase bg-maroon-900/80 backdrop-blur-sm px-4 py-1 rounded-full border border-gold/40">
-                  {couple.hashtag}
-                </span>
-              </div>
             </div>
           </div>
         </motion.div>
@@ -117,10 +111,20 @@ export const Hero = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mt-6 mb-2"
         >
-          <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl font-light text-maroon-900 tracking-wider">
-            AARAV <span className="font-script text-3xl sm:text-5xl text-gold-metallic mx-1">&amp;</span> ANANYA
-          </h1>
-          <p className="font-serif italic text-base sm:text-lg text-ink-600 mt-2 font-light">
+          <div className="space-y-1">
+            <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-light text-maroon-900 tracking-wider">
+              VINAY <span className="font-script text-2xl sm:text-4xl text-gold-metallic mx-1">&amp;</span> NAVISHA
+            </h1>
+            <div className="flex items-center justify-center gap-3 my-1">
+              <span className="h-[0.5px] w-8 bg-gold-dark/40"></span>
+              <span className="font-serif italic text-xl tracking-widest text-gold-dark uppercase font-medium">&amp;</span>
+              <span className="h-[0.5px] w-8 bg-gold-dark/40"></span>
+            </div>
+            <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl font-light text-maroon-900 tracking-wider">
+              SUMIT <span className="font-script text-2xl sm:text-4xl text-gold-metallic mx-1">&amp;</span> BHAWNA
+            </h2>
+          </div>
+          <p className="font-serif italic text-base sm:text-xl text-ink-600 mt-3 font-light">
             are getting married
           </p>
         </motion.div>
@@ -138,10 +142,10 @@ export const Hero = () => {
             <Calendar className="w-4 h-4 text-gold-dark" />
             <span>{couple.fullDateDisplay}</span>
           </div>
-          <div className="flex items-center gap-2 text-sm sm:text-base tracking-wider text-ink-700 bg-cream-50 px-4 py-2 rounded-full border border-gold/40 shadow-sm">
+          {/* <div className="flex items-center gap-2 text-sm sm:text-base tracking-wider text-ink-700 bg-cream-50 px-4 py-2 rounded-full border border-gold/40 shadow-sm">
             <MapPin className="w-4 h-4 text-maroon-700" />
             <span>{couple.city}</span>
-          </div>
+          </div> */}
         </motion.div>
 
         {/* Countdown Timer */}

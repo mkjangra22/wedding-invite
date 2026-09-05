@@ -18,7 +18,6 @@ export const Navbar = () => {
     { name: "Itinerary", href: "#itinerary" },
     { name: "Blessings", href: "#families" },
     { name: "Venue", href: "#venue" },
-    { name: "Gallery", href: "#gallery" },
     { name: "RSVP", href: "#rsvp" },
   ];
 
@@ -45,47 +44,71 @@ export const Navbar = () => {
           : 'bg-transparent py-5'
       }`}
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between">
-        {/* Monogram Brand */}
-        <a 
-          href="#hero" 
-          onClick={(e) => handleLinkClick(e, '#hero')}
-          className="flex items-center gap-2 group"
-        >
-          <div className="w-8 h-8 rounded-full border border-gold/60 flex items-center justify-center bg-cream-50 text-maroon-800 font-serif font-bold text-sm tracking-wider shadow-sm group-hover:border-gold transition-colors">
-            A&amp;A
-          </div>
-          <span className="font-serif tracking-widest text-xs uppercase font-medium text-maroon-900 hidden sm:inline-block">
-            Aarav &amp; Ananya
-          </span>
-        </a>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+        {/* Left Side: Mobile shows VN & SB initials together; Desktop shows VN + Vinay & Navisha */}
+        <div className="flex-1 flex justify-start">
+          {/* Mobile: Initials Only Together */}
+          <a
+            href="#hero"
+            onClick={(e) => handleLinkClick(e, '#hero')}
+            className="flex md:hidden items-center gap-1.5 group"
+            aria-label="Vinay & Navisha and Sumit & Bhawna"
+          >
+            <div className="w-7 h-7 rounded-full border border-gold/70 flex items-center justify-center bg-cream-50 text-maroon-900 font-serif font-bold text-[10px] tracking-wider shadow-sm group-hover:border-gold transition-colors">
+              VN
+            </div>
+            <span className="font-serif italic text-xs text-gold-dark font-medium">&amp;</span>
+            <div className="w-7 h-7 rounded-full border border-gold/70 flex items-center justify-center bg-cream-50 text-maroon-900 font-serif font-bold text-[10px] tracking-wider shadow-sm group-hover:border-gold transition-colors">
+              SB
+            </div>
+          </a>
 
-        {/* Desktop Nav Links */}
-        <nav className="hidden md:flex items-center space-x-7">
+          {/* Desktop Left: Vinay & Navisha */}
+          <a 
+            href="#hero" 
+            onClick={(e) => handleLinkClick(e, '#hero')}
+            className="hidden md:flex items-center gap-2 group"
+          >
+            <div className="w-8 h-8 rounded-full border border-gold/70 flex items-center justify-center bg-cream-50 text-maroon-900 font-serif font-bold text-xs tracking-wider shadow-sm group-hover:border-gold group-hover:bg-cream-100 transition-colors shrink-0">
+              VN
+            </div>
+            <span className="font-serif tracking-widest text-xs uppercase font-medium text-maroon-900 whitespace-nowrap">
+              Vinay &amp; Navisha
+            </span>
+          </a>
+        </div>
+
+        {/* Center: Desktop Nav Links */}
+        <nav className="hidden md:flex items-center space-x-6 lg:space-x-7">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={(e) => handleLinkClick(e, link.href)}
-              className="font-sans text-xs tracking-wider uppercase text-ink-700 hover:text-maroon-800 transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-gold hover:after:w-full after:transition-all after:duration-300"
+              className="font-sans text-xs tracking-wider uppercase text-ink-700 hover:text-maroon-800 transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-gold hover:after:w-full after:transition-all after:duration-300 whitespace-nowrap"
             >
               {link.name}
             </a>
           ))}
         </nav>
 
-        {/* Quick RSVP Button & Mobile Menu Toggle */}
-        <div className="flex items-center gap-3">
-          <a
-            href="#rsvp"
-            onClick={(e) => handleLinkClick(e, '#rsvp')}
-            className="hidden sm:inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-maroon-900 text-cream-50 font-serif text-xs tracking-widest uppercase hover:bg-maroon-800 border border-gold/40 shadow-sm hover:shadow-gold-soft transition-all duration-300"
+        {/* Right Side: Desktop shows Sumit & Bhawna; Mobile shows more menu option */}
+        <div className="flex-1 flex justify-end items-center gap-2 sm:gap-3">
+          {/* Desktop Right: Sumit & Bhawna */}
+          <a 
+            href="#hero" 
+            onClick={(e) => handleLinkClick(e, '#hero')}
+            className="hidden md:flex items-center gap-2 group"
           >
-            <Sparkles className="w-3 h-3 text-gold-light" />
-            <span>RSVP</span>
+            <span className="font-serif tracking-widest text-xs uppercase font-medium text-maroon-900 whitespace-nowrap">
+              Sumit &amp; Bhawna
+            </span>
+            <div className="w-8 h-8 rounded-full border border-gold/70 flex items-center justify-center bg-cream-50 text-maroon-900 font-serif font-bold text-xs tracking-wider shadow-sm group-hover:border-gold group-hover:bg-cream-100 transition-colors shrink-0">
+              SB
+            </div>
           </a>
 
-          {/* Mobile hamburger button */}
+          {/* Mobile hamburger button (More Menu Option) */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden p-2 rounded-lg text-maroon-900 hover:bg-cream-200/50 transition-colors"
@@ -107,6 +130,11 @@ export const Navbar = () => {
             className="md:hidden bg-cream-50/98 backdrop-blur-xl border-b border-gold/30 px-6 py-6 shadow-xl"
           >
             <div className="flex flex-col space-y-4">
+              <div className="flex items-center justify-between pb-3 border-b border-gold/20 font-serif text-xs tracking-wider text-maroon-900 font-medium">
+                <span>Vinay &amp; Navisha</span>
+                <span className="text-gold text-xs">✦</span>
+                <span>Sumit &amp; Bhawna</span>
+              </div>
               {navLinks.map((link) => (
                 <a
                   key={link.name}

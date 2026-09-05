@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import confetti from 'canvas-confetti';
-import { Sparkles, ArrowRight, Heart } from 'lucide-react';
+import { ArrowRight, Heart } from 'lucide-react';
 import { GaneshaIcon, PaisleyMotif, RoyalArch } from './Motifs';
 
 export const ScratchCardScreen = ({ onEnterInvitation }) => {
@@ -10,18 +10,18 @@ export const ScratchCardScreen = ({ onEnterInvitation }) => {
   const [isScratching, setIsScratching] = useState(false);
   const [scratchedPercent, setScratchedPercent] = useState(0);
   const [isRevealed, setIsRevealed] = useState(false);
-  const [cardDimensions, setCardDimensions] = useState({ width: 340, height: 420 });
+  const [cardDimensions, setCardDimensions] = useState({ width: 260, height: 330 });
 
-  // Responsive card size calculation
+  // Responsive card size calculation (reduced by ~25%)
   useEffect(() => {
     const updateSize = () => {
       const screenWidth = window.innerWidth;
       if (screenWidth < 400) {
-        setCardDimensions({ width: 310, height: 390 });
+        setCardDimensions({ width: 235, height: 300 });
       } else if (screenWidth < 640) {
-        setCardDimensions({ width: 340, height: 430 });
+        setCardDimensions({ width: 260, height: 330 });
       } else {
-        setCardDimensions({ width: 380, height: 470 });
+        setCardDimensions({ width: 285, height: 360 });
       }
     };
     updateSize();
@@ -53,10 +53,10 @@ export const ScratchCardScreen = ({ onEnterInvitation }) => {
     ctx.fillRect(0, 0, width, height);
 
     // 2. Subtle Paper Grain & Gold Specks
-    for (let i = 0; i < 600; i++) {
+    for (let i = 0; i < 400; i++) {
       const x = Math.random() * width;
       const y = Math.random() * height;
-      const radius = Math.random() * 1.5;
+      const radius = Math.random() * 1.2;
       ctx.fillStyle = Math.random() > 0.5 ? 'rgba(255, 255, 255, 0.4)' : 'rgba(92, 20, 28, 0.15)';
       ctx.beginPath();
       ctx.arc(x, y, radius, 0, Math.PI * 2);
@@ -65,45 +65,45 @@ export const ScratchCardScreen = ({ onEnterInvitation }) => {
 
     // 3. Ornate Double Gold Borders
     ctx.strokeStyle = 'rgba(92, 20, 28, 0.35)';
-    ctx.lineWidth = 1.5;
-    ctx.strokeRect(12, 12, width - 24, height - 24);
+    ctx.lineWidth = 1.2;
+    ctx.strokeRect(9, 9, width - 18, height - 18);
 
     ctx.strokeStyle = 'rgba(255, 255, 255, 0.6)';
-    ctx.lineWidth = 1;
-    ctx.setLineDash([4, 4]);
-    ctx.strokeRect(18, 18, width - 36, height - 36);
+    ctx.lineWidth = 0.8;
+    ctx.setLineDash([3, 3]);
+    ctx.strokeRect(14, 14, width - 28, height - 28);
     ctx.setLineDash([]);
 
     // 4. Subtle Paisley Motifs in Gold Foil
     ctx.fillStyle = 'rgba(92, 20, 28, 0.12)';
-    ctx.font = '28px serif';
+    ctx.font = '22px serif';
     ctx.textAlign = 'center';
-    ctx.fillText('❦', width / 2, 70);
-    ctx.fillText('❦', width / 2, height - 60);
+    ctx.fillText('', width / 2, 48);
+    ctx.fillText(' ', width / 2, height - 42);
 
     // 5. Foil Text Details
     ctx.fillStyle = '#4A121A';
-    ctx.font = 'bold 13px "Cinzel", serif';
-    ctx.letterSpacing = '3px';
-    ctx.fillText('AUTHENTIC WEDDING SEAL', width / 2, 120);
+    ctx.font = 'bold 15px "Cinzel", serif';
+    ctx.letterSpacing = '2px';
+    ctx.fillText('Scratch to Reveal', width / 2, 78);
 
-    ctx.font = 'italic 16px "Cormorant Garamond", serif';
+    ctx.font = 'italic 13px "Cormorant Garamond", serif';
     ctx.fillStyle = '#5C141C';
-    ctx.fillText('Rub gently to reveal', width / 2, height / 2 - 20);
+    // ctx.fillText('Rub gently to reveal', width / 2, height / 2 - 16);
 
     // Subtle coin icon
     ctx.strokeStyle = '#5C141C';
-    ctx.lineWidth = 1.5;
+    ctx.lineWidth = 1.2;
     ctx.beginPath();
-    ctx.arc(width / 2, height / 2 + 30, 24, 0, Math.PI * 2);
+    ctx.arc(width / 2, height / 2 + 20, 18, 0, Math.PI * 2);
     ctx.stroke();
 
-    ctx.font = '14px "Cinzel", serif';
-    ctx.fillText('SCRATCH', width / 2, height / 2 + 35);
+    ctx.font = '10px "Cinzel", serif';
+    // ctx.fillText('SCRATCH', width / 2, height / 2 + 24);
 
-    ctx.font = '10px "Plus Jakarta Sans", sans-serif';
+    ctx.font = '9px "Plus Jakarta Sans", sans-serif';
     ctx.fillStyle = 'rgba(74, 18, 26, 0.7)';
-    ctx.fillText('USE COIN OR FINGER', width / 2, height - 30);
+    ctx.fillText('USE FINGERS TO SCRATCH ', width / 2, height - 20);
   }, [cardDimensions]);
 
   useEffect(() => {
@@ -215,7 +215,7 @@ export const ScratchCardScreen = ({ onEnterInvitation }) => {
     ctx.globalCompositeOperation = 'destination-out';
 
     // Brush with soft falloff
-    const brushRadius = 34;
+    const brushRadius = 26;
     const radialGrad = ctx.createRadialGradient(x, y, 0, x, y, brushRadius);
     radialGrad.addColorStop(0, 'rgba(0,0,0,1)');
     radialGrad.addColorStop(0.7, 'rgba(0,0,0,0.9)');
@@ -262,7 +262,7 @@ export const ScratchCardScreen = ({ onEnterInvitation }) => {
         className="text-center z-10 pt-2"
       >
         <div className="flex justify-center mb-1.5">
-          <GaneshaIcon className="w-10 h-10 text-maroon-800 drop-shadow-sm" />
+          {/* <GaneshaIcon className="w-10 h-10 text-maroon-800 drop-shadow-sm" /> */}
         </div>
         <p className="font-sanskrit-shloka text-maroon-900 text-sm md:text-base font-semibold tracking-widest">
           ॥ श्री गणेशाय नमः ॥
@@ -271,7 +271,7 @@ export const ScratchCardScreen = ({ onEnterInvitation }) => {
           A little secret awaits...
         </h1>
         <p className="font-sans text-xs md:text-sm text-ink-600 max-w-sm mx-auto mt-1 px-4">
-          Scratch the card below to discover when our forever begins.
+          Let the celebrations begin…
         </p>
       </motion.div>
 
@@ -290,43 +290,48 @@ export const ScratchCardScreen = ({ onEnterInvitation }) => {
         >
           {/* Inner Card Container */}
           <div 
-            className="relative w-full h-full rounded-xl overflow-hidden bg-cream-50 flex flex-col items-center justify-between p-6 select-none"
+            className="relative w-full h-full rounded-xl overflow-hidden bg-cream-50 flex flex-col items-center justify-between p-4 select-none"
             style={{ width: cardDimensions.width, height: cardDimensions.height }}
           >
             {/* --- UNDERLYING REVEAL CONTENT --- */}
-            <div className="absolute inset-0 flex flex-col items-center justify-between p-6 bg-gradient-to-b from-cream-50 via-cream-100 to-cream-200 border-2 border-gold/40 rounded-xl pointer-events-none">
+            <div className="absolute inset-0 flex flex-col items-center justify-between p-4 bg-gradient-to-b from-cream-50 via-cream-100 to-cream-200 border-2 border-gold/40 rounded-xl pointer-events-none">
               {/* Card Header */}
               <div className="text-center w-full">
-                <div className="text-[10px] tracking-[0.3em] font-sans text-maroon-700 font-semibold uppercase">
-                  Save The Date
+                <div className="text-[9px] tracking-[0.25em] font-sans text-maroon-700 font-semibold uppercase">
+                  {/* Save The Date */}
                 </div>
-                <div className="w-12 h-[1px] bg-gold mx-auto my-1.5"></div>
-                <div className="font-serif text-xs md:text-sm tracking-widest text-ink-600 uppercase">
+                <div className="w-10 h-[1px] bg-gold mx-auto my-1"></div>
+                <div className="font-serif text-[11px] tracking-widest text-ink-600 uppercase">
                   We're Getting Married
                 </div>
               </div>
 
               {/* Couple Monogram & Names */}
-              <div className="text-center py-2">
-                <div className="font-script text-4xl md:text-5xl text-maroon-900 leading-none">
-                  Aarav & Ananya
+              <div className="text-center py-0.5">
+                <div className="font-script text-2xl sm:text-3xl text-maroon-900 leading-tight">
+                  Vinay &amp; Navisha
                 </div>
-                <div className="flex items-center justify-center gap-2 my-2">
-                  <div className="w-8 h-[0.5px] bg-gold-dark"></div>
-                  <Heart className="w-3.5 h-3.5 text-maroon-700 fill-maroon-700" />
-                  <div className="w-8 h-[0.5px] bg-gold-dark"></div>
+                <div className="flex items-center justify-center gap-2 my-0.5">
+                  <div className="w-5 h-[0.5px] bg-gold-dark/60"></div>
+                  <span className="font-serif italic text-[20px] text-gold-dark font-medium">&amp;</span>
+                  <div className="w-5 h-[0.5px] bg-gold-dark/60"></div>
                 </div>
-                <div className="font-display text-lg md:text-xl font-bold tracking-widest text-maroon-800">
-                  15 • 16 • 17 FEBRUARY 2027
+                <div className="font-script text-2xl sm:text-3xl text-maroon-900 leading-tight">
+                  Sumit &amp; Bhawna
+                </div>
+                <div className="flex items-center justify-center gap-2 mt-1.5 mb-1">
+                  <div className="w-6 h-[0.5px] bg-gold-dark"></div>
+                  <Heart className="w-2.5 h-2.5 text-maroon-700 fill-maroon-700" />
+                  <div className="w-6 h-[0.5px] bg-gold-dark"></div>
+                </div>
+                <div className="font-display text-xs sm:text-sm font-bold tracking-widest text-maroon-800">
+                  20 November 2026
                 </div>
               </div>
 
               {/* Location & Sacred Blessing */}
-              <div className="text-center w-full pb-1">
-                <div className="font-sans text-xs uppercase tracking-wider text-ink-700 font-medium">
-                  📍 Panipat, Haryana
-                </div>
-                <div className="font-sanskrit text-[11px] text-gold-dark mt-2 tracking-widest">
+              <div className="text-center w-full pb-0.5">
+                <div className="font-sanskrit text-[15px] text-gold-dark tracking-widest">
                   ॥ शुभ विवाह ॥
                 </div>
               </div>
@@ -345,28 +350,6 @@ export const ScratchCardScreen = ({ onEnterInvitation }) => {
               onPointerUp={handlePointerUp}
               onPointerCancel={handlePointerUp}
             />
-          </div>
-        </div>
-
-        {/* Scratch Progress Pill & Quick Reveal */}
-        <div className="flex items-center justify-between text-xs text-ink-600 px-3 mt-3">
-          <span className="flex items-center gap-1 font-medium text-maroon-800">
-            <Sparkles className="w-3.5 h-3.5 text-gold-dark animate-spin-slow" />
-            {scratchedPercent < 40 ? "Scratch with finger or mouse" : "✨ Card Revealed!"}
-          </span>
-          <div className="flex items-center gap-2">
-            {!isRevealed && (
-              <button
-                type="button"
-                onClick={handleAutoReveal}
-                className="text-[11px] text-maroon-800 underline decoration-gold/60 underline-offset-2 hover:text-maroon-600 transition-colors"
-              >
-                Quick Reveal
-              </button>
-            )}
-            <span className="font-mono text-xs text-gold-dark bg-cream-200/80 px-2 py-0.5 rounded-full border border-gold/30">
-              {scratchedPercent}%
-            </span>
           </div>
         </div>
       </motion.div>

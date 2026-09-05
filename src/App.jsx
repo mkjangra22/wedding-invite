@@ -7,7 +7,6 @@ import { WeddingMessage } from './components/WeddingMessage';
 import { Itinerary } from './components/Itinerary';
 import { Families } from './components/Families';
 import { VenueTravel } from './components/VenueTravel';
-import { Gallery } from './components/Gallery';
 import { RSVP } from './components/RSVP';
 import { Footer } from './components/Footer';
 import { AudioPlayer } from './components/AudioPlayer';
@@ -54,7 +53,6 @@ export function App() {
               <Itinerary />
               <Families />
               <VenueTravel />
-              <Gallery />
               <RSVP />
             </main>
 

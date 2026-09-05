@@ -11,7 +11,7 @@ export const Footer = () => {
   };
 
   const handleShareWhatsApp = () => {
-    const text = `✨ You are cordially invited to celebrate the wedding celebrations of Aarav & Ananya! (15-17 Feb 2027, Panipat, Haryana).\n\nScratch the invitation card to reveal our wedding details:\n${window.location.href}`;
+    const text = `✨ You are cordially invited to celebrate the wedding celebrations of Vinay & Navisha and Sumit & Bhawna! (20 November 2026, Panipat, Haryana).\n\nScratch the invitation card to reveal our wedding details:\n${window.location.href}`;
     const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank');
   };
@@ -30,14 +30,18 @@ export const Footer = () => {
         </p>
 
         {/* Names */}
-        <div className="flex items-center justify-center gap-3 my-3">
-          <span className="font-serif text-2xl sm:text-3xl text-maroon-900 font-light tracking-wider">
-            AARAV
-          </span>
-          <Heart className="w-4 h-4 text-maroon-700 fill-maroon-700" />
-          <span className="font-serif text-2xl sm:text-3xl text-maroon-900 font-light tracking-wider">
-            ANANYA
-          </span>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 my-3 font-serif text-xl sm:text-2xl text-maroon-900 font-light tracking-wider">
+          <div className="flex items-center gap-2">
+            <span>VINAY</span>
+            <Heart className="w-3.5 h-3.5 text-maroon-700 fill-maroon-700" />
+            <span>NAVISHA</span>
+          </div>
+          <span className="hidden sm:inline text-gold-dark text-xs">✦</span>
+          <div className="flex items-center gap-2">
+            <span>SUMIT</span>
+            <Heart className="w-3.5 h-3.5 text-maroon-700 fill-maroon-700" />
+            <span>BHAWNA</span>
+          </div>
         </div>
 
         <MandalaDivider className="my-5 max-w-xs" />
@@ -48,7 +52,7 @@ export const Footer = () => {
         </p>
 
         <p className="font-sans text-xs tracking-widest uppercase text-gold-dark font-semibold mt-4">
-          With love, Aarav &amp; Ananya
+          With love, Vinay &amp; Navisha and Sumit &amp; Bhawna
         </p>
 
         {/* Action buttons (WhatsApp Share & Back to Top) */}
@@ -72,7 +76,7 @@ export const Footer = () => {
 
         {/* Bottom copyright / credits */}
         <div className="mt-14 pt-6 border-t border-gold/20 w-full text-[11px] text-ink-500 font-sans flex flex-col sm:flex-row items-center justify-between gap-2">
-          <span>15 • 16 • 17 February 2027 • Panipat, Haryana</span>
+          <span>20 November 2026 • Panipat, Haryana</span>
           <span>Designed with love &amp; auspicious blessings</span>
         </div>
       </div>

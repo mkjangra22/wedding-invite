@@ -52,7 +52,7 @@ export const WeddingMessage = () => {
             With immense joy in our hearts and gratitude to the Almighty, we, along with our parents, cordially invite you to celebrate the wedding festivities of
           </p>
           <p className="font-serif text-xl sm:text-2xl text-maroon-900 font-semibold tracking-wider my-2">
-            Aarav &amp; Ananya
+            Vinay &amp; Navisha <span className="font-serif italic text-gold-dark text-base font-normal mx-2">&amp;</span> Sumit &amp; Bhawna
           </p>
           <p>
             {couple.storyNote}
@@ -64,11 +64,11 @@ export const WeddingMessage = () => {
 
         {/* Signature */}
         <div className="mt-8 pt-4 flex flex-col items-center">
-          <span className="font-script text-3xl sm:text-4xl text-maroon-800">
-            Aarav &amp; Ananya
-          </span>
+          {/* <span className="font-script text-2xl sm:text-3xl text-maroon-800">
+            Vinay &amp; Navisha &amp; Sumit &amp; Bhawna
+          </span> */}
           <span className="font-sans text-[11px] uppercase tracking-widest text-ink-500 mt-1">
-            Sharma &amp; Verma Families
+            With the blessings of our families
           </span>
         </div>
       </motion.div>

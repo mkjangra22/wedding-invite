@@ -9,8 +9,8 @@ export const getGoogleCalendarUrl = ({ title, description, venue, startIso, endI
 
   const params = new URLSearchParams({
     action: "TEMPLATE",
-    text: `Aarav & Ananya's Wedding — ${title}`,
-    details: `${description}\n\nCouple: Aarav Sharma & Ananya Verma\nHashtag: #AaravKiAnanya`,
+    text: `Vinay & Navisha's Wedding — ${title}`,
+    details: `${description}\n\nCouple: Vinay & Navisha\nHashtag: #VinayWedsNavisha`,
     location: venue,
     dates: `${startFormatted}/${endFormatted}`,
   });
@@ -31,22 +31,22 @@ export const downloadIcsFile = ({ title, description, venue, startIso, endIso })
   const icsContent = [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
-    "PRODID:-//Aarav and Ananya Wedding Invitation//EN",
+    "PRODID:-//Vinay and Navisha Wedding Invitation//EN",
     "CALSCALE:GREGORIAN",
     "METHOD:PUBLISH",
     "BEGIN:VEVENT",
-    `UID:wedding-${Date.now()}@aaravananya.com`,
+    `UID:wedding-${Date.now()}@vinaynavisha.com`,
     `DTSTAMP:${nowFormatted}`,
     `DTSTART:${startFormatted}`,
     `DTEND:${endFormatted}`,
-    `SUMMARY:Aarav & Ananya Wedding: ${title}`,
+    `SUMMARY:Vinay & Navisha Wedding: ${title}`,
     `DESCRIPTION:${description.replace(/\n/g, "\\n")}`,
     `LOCATION:${venue}`,
     "STATUS:CONFIRMED",
     "BEGIN:VALARM",
     "TRIGGER:-PT24H",
     "ACTION:DISPLAY",
-    `DESCRIPTION:Reminder: ${title} — Aarav & Ananya's Wedding`,
+    `DESCRIPTION:Reminder: ${title} — Vinay & Navisha's Wedding`,
     "END:VALARM",
     "END:VEVENT",
     "END:VCALENDAR"
@@ -55,7 +55,7 @@ export const downloadIcsFile = ({ title, description, venue, startIso, endIso })
   const blob = new Blob([icsContent], { type: "text/calendar;charset=utf-8" });
   const link = document.createElement("a");
   link.href = window.URL.createObjectURL(blob);
-  link.setAttribute("download", `Aarav-Ananya-${title.replace(/[^a-zA-Z0-9]/g, "-")}.ics`);
+  link.setAttribute("download", `Vinay-Navisha-${title.replace(/[^a-zA-Z0-9]/g, "-")}.ics`);
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
