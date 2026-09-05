@@ -7,7 +7,6 @@ import { WeddingMessage } from './components/WeddingMessage';
 import { Itinerary } from './components/Itinerary';
 import { Families } from './components/Families';
 import { VenueTravel } from './components/VenueTravel';
-import { RSVP } from './components/RSVP';
 import { Footer } from './components/Footer';
 import { AudioPlayer } from './components/AudioPlayer';
 import { PetalEffect } from './components/PetalEffect';
@@ -53,7 +52,6 @@ export function App() {
               <Itinerary />
               <Families />
               <VenueTravel />
-              <RSVP />
             </main>
 
             {/* Sacred Closing & Footer */}

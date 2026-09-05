@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Heart, Sparkles } from 'lucide-react';
+import { Menu, X, Heart } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export const Navbar = () => {
@@ -18,7 +18,6 @@ export const Navbar = () => {
     { name: "Itinerary", href: "#itinerary" },
     { name: "Blessings", href: "#families" },
     { name: "Venue", href: "#venue" },
-    { name: "RSVP", href: "#rsvp" },
   ];
 
   const handleLinkClick = (e, href) => {
@@ -146,16 +145,6 @@ export const Navbar = () => {
                   <span className="text-gold text-xs">✦</span>
                 </a>
               ))}
-              <div className="pt-2">
-                <a
-                  href="#rsvp"
-                  onClick={(e) => handleLinkClick(e, '#rsvp')}
-                  className="w-full inline-flex items-center justify-center gap-2 py-3 rounded-full bg-maroon-900 text-cream-50 font-serif text-sm tracking-widest uppercase border border-gold/40 shadow-md"
-                >
-                  <Sparkles className="w-4 h-4 text-gold-light" />
-                  <span>RSVP for Celebrations</span>
-                </a>
-              </div>
             </div>
           </motion.div>
         )}

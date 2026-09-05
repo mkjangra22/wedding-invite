@@ -59,7 +59,7 @@ export const weddingData = {
       time: "6 PM",
       startIso: "2026-11-20T19:00:00+05:30",
       endIso: "2026-11-20T23:59:00+05:30",
-      poeticText: "Auspicious ring ceremony of Vinay followed by celebratory dinner festivities amidst the garden.",
+      poeticText: "Auspicious Sagai of Vinay followed by celebratory dinner festivities amidst the garden.",
       venue: "Secretary Garden, Patti Kalyana, Samalkha",
       iconName: "Sparkles",
     },

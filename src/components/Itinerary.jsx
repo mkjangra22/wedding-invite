@@ -85,7 +85,7 @@ export const Itinerary = () => {
                   <div className="bg-cream-50/95 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-gold/35 shadow-luxury card-hover-luxury relative">
                     {/* Event Tag & Date Header */}
                     <div className="flex items-center justify-between gap-2 border-b border-gold/25 pb-3 mb-5">
-                      <span className="font-serif text-xs font-semibold tracking-widest uppercase text-maroon-800 bg-maroon-50 px-3.5 py-1 rounded-full border border-maroon-100">
+                      <span className="font-sans text-xs font-medium tracking-wide text-maroon-800 bg-maroon-50 px-3.5 py-1 rounded-full border border-maroon-100">
                         {group.date}
                       </span>
                       {group.events.length === 1 && (

@@ -55,7 +55,7 @@ export const Hero = () => {
       {/* Background Ambience / Subtle Indian Arch glow */}
       <div className="absolute top-12 left-1/2 -translate-x-1/2 w-[650px] h-[650px] bg-gradient-to-b from-gold/15 to-transparent rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-4xl mx-auto z-10 flex flex-col items-center">
+      <div className="max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto z-10 flex flex-col items-center">
         {/* Top Ganesh Blessing */}
         <motion.div
           initial={{ opacity: 0, y: -15 }}
@@ -111,17 +111,17 @@ export const Hero = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mt-6 mb-2"
         >
-          <div className="space-y-1">
-            <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-light text-maroon-900 tracking-wider">
-              VINAY <span className="font-script text-2xl sm:text-4xl text-gold-metallic mx-2 lowercase italic">weds</span> NAVISHA
+          <div className="flex flex-col md:flex-row items-center justify-center gap-1 sm:gap-2 md:gap-5 lg:gap-7 my-2">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-3xl lg:text-4xl xl:text-5xl font-light text-maroon-900 tracking-wider whitespace-nowrap">
+              VINAY <span className="font-script text-2xl sm:text-3xl md:text-2xl lg:text-4xl text-gold-metallic mx-1.5 lowercase italic">weds</span> NAVISHA
             </h1>
-            <div className="flex items-center justify-center gap-3 my-1">
-              <span className="h-[0.5px] w-8 bg-gold-dark/40"></span>
-              <span className="font-serif italic text-xl tracking-widest text-gold-dark uppercase font-medium">&amp;</span>
-              <span className="h-[0.5px] w-8 bg-gold-dark/40"></span>
+            <div className="flex md:flex-col items-center justify-center gap-3 md:gap-1.5 my-1 md:my-0 shrink-0">
+              <span className="h-[0.5px] w-8 md:w-[0.5px] md:h-5 bg-gold-dark/50"></span>
+              <span className="font-serif italic text-lg sm:text-xl md:text-base lg:text-lg tracking-widest text-gold-dark uppercase font-medium">&amp;</span>
+              <span className="h-[0.5px] w-8 md:w-[0.5px] md:h-5 bg-gold-dark/50"></span>
             </div>
-            <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl font-light text-maroon-900 tracking-wider">
-              SUMIT <span className="font-script text-2xl sm:text-4xl text-gold-metallic mx-2 lowercase italic">weds</span> BHAWNA
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-3xl lg:text-4xl xl:text-5xl font-light text-maroon-900 tracking-wider whitespace-nowrap">
+              SUMIT <span className="font-script text-2xl sm:text-3xl md:text-2xl lg:text-4xl text-gold-metallic mx-1.5 lowercase italic">weds</span> BHAWNA
             </h2>
           </div>
           <p className="font-serif italic text-base sm:text-xl text-ink-600 mt-3 font-light">
